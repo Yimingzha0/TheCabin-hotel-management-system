@@ -29,7 +29,6 @@ const Guest = styled.div`
 
 function TodayItem({ stay }) {
   const { id, status, guests, numNights } = stay;
-
   const statusToAction = {
     unconfirmed: {
       action: 'arriving',

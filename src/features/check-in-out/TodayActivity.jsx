@@ -42,7 +42,6 @@ const NoActivity = styled.p`
 
 function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
-
   return (
       <StyledToday>
         <Row type="horizontal">
@@ -53,7 +52,7 @@ function TodayActivity() {
             activities?.length > 0 ? (
                 <TodayList>
                   {activities.map((activity) => (
-                      <TodayItem activity={activity} key={activity.id} />
+                      <TodayItem stay={activity} key={activity.id} />
                   ))}
                 </TodayList>
             ) : (

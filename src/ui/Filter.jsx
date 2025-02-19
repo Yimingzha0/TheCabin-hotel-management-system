@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import {useParams, useSearchParams} from "react-router-dom";
+import { useSearchParams} from "react-router-dom";
 
 const StyledFilter = styled.div`
   border: 1px solid var(--color-grey-100);
@@ -16,7 +16,7 @@ const FilterButton = styled.button`
   border: none;
 
   ${(props) =>
-    props.active &&
+    props.$active &&
     css`
       background-color: var(--color-brand-600);
       color: var(--color-brand-50);
@@ -51,7 +51,7 @@ export function Filter({filterField, options}) {
           {options.map((option) => (
               <FilterButton
                   key={option.value}
-                  active={currentFilter === option.value}
+                  $active={option.value === currentFilter}
                   disabled={currentFilter === option.value}
                   onClick={()=>handleClick(option.value)}>{option.label}</FilterButton>))}
       </StyledFilter>
